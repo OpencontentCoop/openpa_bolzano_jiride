@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BachecaOut>
+    <Titolo>AMMINISTRAZIONE TRASPARENTE</Titolo>
+    <Albo>SEZIONI GENERICHE</Albo>
+    <Documenti DimensionePagina="30" IndicePagina="1" totaleDocumenti="3">
+        <Documento>
+            <IdDocumento>831</IdDocumento>
+            <DataUpd>06/02/2020 16:03:19</DataUpd>
+            <CountUpd>1</CountUpd>
+            <TipoAtto>0212</TipoAtto>
+            <TipoAtto_Descrizione>DETERMINA</TipoAtto_Descrizione>
+            <Proponente>220</Proponente>
+            <Proponente_Descrizione>2.2.0. - Ufficio Informatica e Telecomunicazioni</Proponente_Descrizione>
+            <Oggetto>TEST AMT 3</Oggetto>
+            <Oggetto2>TEST AMT 3</Oggetto2>
+            <Oggetto3>TEST AMT 3</Oggetto3>
+            <Anno>2019</Anno>
+            <Numero>151</Numero>
+            <AnnoProtocollo>2019</AnnoProtocollo>
+            <NumeroProtocollo>1947</NumeroProtocollo>
+            <DataDocumento>17/12/2019</DataDocumento>
+            <Classifica>1.6</Classifica>
+            <Classifica_Descrizione>ARCHIVIO GENERALE, AFFRANCATURA POSTA IN PARTENZA, ACCESSO AI DOCUMENTI, CORRIERE
+                POSTALE, MASSIMARIO DI SELEZIONE, PRIVACY, PROTOCOLLO, PUBBLICAZIONE ATTI, NOTIFICHE, SCARTO, TITOLARIO,
+            </Classifica_Descrizione>
+            <Dirigente/>
+            <Dirigente_Descrizione>Danila Sartori</Dirigente_Descrizione>
+            <Struttura>200</Struttura>
+            <Struttura_Descrizione>2.0.0. - Ripartizione Programmazione, Controllo E Sistema Informativo
+            </Struttura_Descrizione>
+            <DataEsecutivita>17/12/2019</DataEsecutivita>
+            <Mittente/>
+            <NumeroAllegati>1</NumeroAllegati>
+            <Allegati>
+                <Allegato>
+                    <Serial>1930871</Serial>
+                    <Estensione>pdf</Estensione>
+                    <SottoEstensione/>
+                    <Firme>0</Firme>
+                    <Commento>det_00151_17-12-2019.pdf</Commento>
+                    <ParereDi/>
+                    <TipoAllegato>Testo principale del documento</TipoAllegato>
+                </Allegato>
+            </Allegati>
+            <TipoDocumento>201</TipoDocumento>
+            <TipoDocumento_Descrizione>DETERMINA</TipoDocumento_Descrizione>
+            <DataAtto>17/12/2019</DataAtto>
+            <Stato>attivo</Stato>
+            <ListaTarget>
+                <Target>
+                    <Codice1>50</Codice1>
+                    <Denominazione1>Bandi di gara e contratti</Denominazione1>
+                    <Codice2>04</Codice2>
+                    <Denominazione2>Determinazione di affidamento diretto sotto i 40.000 euro</Denominazione2>
+                    <DataInizioPubblicazione>17/12/2019</DataInizioPubblicazione>
+                    <DataFinePubblicazione>31/12/2024</DataFinePubblicazione>
+                </Target>
+            </ListaTarget>
+        </Documento>
+        <Documento>
+            <IdDocumento>815</IdDocumento>
+            <DataUpd>18/02/2020 12:05:39</DataUpd>
+            <CountUpd>8</CountUpd>
+            <TipoAtto>0212</TipoAtto>
+            <TipoAtto_Descrizione>DETERMINA</TipoAtto_Descrizione>
+            <Proponente>220</Proponente>
+            <Proponente_Descrizione>2.2.0.SVILUPPO &amp; SW APPLICATIVI</Proponente_Descrizione>
+            <Oggetto>DETERMINA IN AMT 23</Oggetto>
+            <Oggetto2>DETERMINA IN AMT - DE Ö</Oggetto2>
+            <Oggetto3>DETERMINA IN AMT</Oggetto3>
+            <Anno>2019</Anno>
+            <Numero>148</Numero>
+            <AnnoProtocollo>2019</AnnoProtocollo>
+            <NumeroProtocollo>1935</NumeroProtocollo>
+            <DataDocumento>12/12/2019</DataDocumento>
+            <Classifica>1.6</Classifica>
+            <Classifica_Descrizione>ARCHIVIO GENERALE, AFFRANCATURA POSTA IN PARTENZA, ACCESSO AI DOCUMENTI, CORRIERE
+                POSTALE, MASSIMARIO DI SELEZIONE, PRIVACY, PROTOCOLLO, PUBBLICAZIONE ATTI, NOTIFICHE, SCARTO, TITOLARIO,
+            </Classifica_Descrizione>
+            <Dirigente/>
+            <Dirigente_Descrizione>Danila Sartori</Dirigente_Descrizione>
+            <Struttura>200</Struttura>
+            <Struttura_Descrizione>2.0.0. - Ripartizione Programmazione, Controllo E Sistema Informativo
+            </Struttura_Descrizione>
+            <DataEsecutivita>12/12/2019</DataEsecutivita>
+            <Mittente/>
+            <NumeroAllegati>2</NumeroAllegati>
+            <Allegati>
+                <Allegato>
+                    <Serial>1930746</Serial>
+                    <Estensione>doc</Estensione>
+                    <SottoEstensione/>
+                    <Firme>0</Firme>
+                    <Commento>det_00148_12-12-2019.doc</Commento>
+                    <ParereDi/>
+                    <TipoAllegato>Testo principale del documento</TipoAllegato>
+                </Allegato>
+                <Allegato>
+                    <Serial>1932190</Serial>
+                    <Estensione>pdf</Estensione>
+                    <SottoEstensione/>
+                    <Firme>0</Firme>
+                    <Commento>d69446.pdf</Commento>
+                    <ParereDi/>
+                    <TipoAllegato>Allegato parte integrante</TipoAllegato>
+                </Allegato>
+            </Allegati>
+            <TipoDocumento>201</TipoDocumento>
+            <TipoDocumento_Descrizione>DETERMINA</TipoDocumento_Descrizione>
+            <DataAtto>12/12/2019</DataAtto>
+            <Stato>attivo</Stato>
+            <ListaTarget>
+                <Target>
+                    <Codice1>50</Codice1>
+                    <Denominazione1>Bandi di gara e contratti</Denominazione1>
+                    <Codice2>01</Codice2>
+                    <Denominazione2>Determinazione di nomina del RUP - Determinazioni di nomina generale
+                    </Denominazione2>
+                    <DataInizioPubblicazione>06/02/2020</DataInizioPubblicazione>
+                    <DataFinePubblicazione>31/12/2025</DataFinePubblicazione>
+                </Target>
+            </ListaTarget>
+        </Documento>
+        <Documento>
+            <IdDocumento>931</IdDocumento>
+            <DataUpd>18/02/2020 12:28:29</DataUpd>
+            <CountUpd>0</CountUpd>
+            <TipoAtto>0212</TipoAtto>
+            <TipoAtto_Descrizione>DETERMINA</TipoAtto_Descrizione>
+            <Proponente>510</Proponente>
+            <Proponente_Descrizione>5.1.0. - Ufficio Gestione Del Territorio</Proponente_Descrizione>
+            <Oggetto>ABITABILITÀ / AGIBILITÀ 2020-003-0 - MUSTERMANN THOMAS - PED/BP 2563 - PF/GP - PM/MA 5 - SUB/BE 5 -
+                CC/KG GRIES - VIA VERONA 20
+            </Oggetto>
+            <Oggetto2>DE</Oggetto2>
+            <Oggetto3>DE</Oggetto3>
+            <Anno>0</Anno>
+            <Numero/>
+            <AnnoProtocollo>2020</AnnoProtocollo>
+            <NumeroProtocollo>277</NumeroProtocollo>
+            <DataDocumento/>
+            <Mittente>MUSTERMANN THOMAS</Mittente>
+            <NumeroAllegati>2</NumeroAllegati>
+            <Allegati>
+                <Allegato>
+                    <Serial>1932191</Serial>
+                    <Estensione>pdf</Estensione>
+                    <SottoEstensione/>
+                    <Firme>0</Firme>
+                    <Commento>BUILDING-DOCUMENTS.pdf</Commento>
+                    <ParereDi/>
+                    <TipoAllegato>Testo principale del documento</TipoAllegato>
+                </Allegato>
+                <Allegato>
+                    <Serial>1932192</Serial>
+                    <Estensione>pdf</Estensione>
+                    <SottoEstensione/>
+                    <Firme>0</Firme>
+                    <Commento>1-00 - Istanza di Concessione Edilizia.pdf</Commento>
+                    <ParereDi/>
+                    <TipoAllegato>Allegato parte integrante</TipoAllegato>
+                </Allegato>
+            </Allegati>
+            <TipoDocumento>201</TipoDocumento>
+            <TipoDocumento_Descrizione>DETERMINA</TipoDocumento_Descrizione>
+            <DataAtto/>
+            <Stato>attivo</Stato>
+            <ListaTarget>
+                <Target>
+                    <Codice1>50</Codice1>
+                    <Denominazione1>Bandi di gara e contratti</Denominazione1>
+                    <Codice2>06</Codice2>
+                    <Denominazione2>Determinazione a contrarre nelle procedure di gara sotto soglia comunitaria
+                    </Denominazione2>
+                    <DataInizioPubblicazione>18/02/2020</DataInizioPubblicazione>
+                    <DataFinePubblicazione>31/12/2025</DataFinePubblicazione>
+                </Target>
+            </ListaTarget>
+        </Documento>
+    </Documenti>
+</BachecaOut>
