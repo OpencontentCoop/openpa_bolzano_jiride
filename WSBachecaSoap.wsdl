@@ -1181,8 +1181,7 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       <wsdl:port binding="impl:WSBachecaSoapSoapBinding" name="WSBachecaSoap">
 
-         <wsdlsoap:address location="https://trasparenza.comune.bolzano.it/client/services/WSBachecaSoap"/>
-
+         <wsdlsoap:address location="http://jiride-clone.comune.bolzano.it:57080/client/services/WSBachecaSoap"/>
       </wsdl:port>
 
    </wsdl:service>

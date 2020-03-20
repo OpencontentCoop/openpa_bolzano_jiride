@@ -50,7 +50,13 @@ class OpenPABolzanoImportJirideHandler extends SQLIImportAbstractHandler impleme
             $toTimestamp = time();
         }
         
-        $this->dataSource = self::fetchData($fromTimestamp, $toTimestamp);
+        try {
+            $this->dataSource = self::fetchData($fromTimestamp, $toTimestamp);
+        }catch (Exception $e){
+            $this->cli->error($e->getMessage());
+            $this->cli->output($e->getTraceAsString());
+            $this->dataSource = [];
+        }
     }
 
     /**
@@ -111,7 +117,7 @@ class OpenPABolzanoImportJirideHandler extends SQLIImportAbstractHandler impleme
         try {            
             $this->sectionTools->changeSection($node);            
         }catch (Exception $e){
-            $cli->error($e->getMessage());
+            $this->cli->error($e->getMessage());
         }
     }
 
@@ -276,10 +282,10 @@ class OpenPABolzanoImportJirideHandler extends SQLIImportAbstractHandler impleme
     private function getDocumentType(SimpleXMLElement $document)
     {
         if ($document->TipoAtto_Descrizione == 'DETERMINA'){
-            return 'Detereminazione';
+            return '143|#Determinazione|#132|#ita-IT';
         }
 
-        return 'Deliberazione';
+        return '136|#Deliberazione|#132|#ita-IT';
     }
 
     private function getTopics(SimpleXMLElement $document)
