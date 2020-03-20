@@ -259,7 +259,7 @@ class OpenPABolzanoImportJirideHandler extends SQLIImportAbstractHandler impleme
                 'document_type' => $this->getDocumentType($document),
                 'description' => $document->Oggetto . ' ' . $document->Oggetto2 . ' ' . $document->Oggetto3,
                 'topics' => $this->getTopics($document),
-                'links' => $this->getLinks($document),                
+                'link' => $this->getLinks($document),
                 'area' => $this->getArea($document),
                 'has_organization' => $this->getOffice($document),
                 'start_time' => $this->getTimetamp((string)$document->DataEsecutivita),

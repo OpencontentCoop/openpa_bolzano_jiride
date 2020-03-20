@@ -17,6 +17,24 @@ if (!$document->canRead()) {
     return $module->handleError(eZError::KERNEL_ACCESS_DENIED, 'kernel');
 }
 
+$isDocumentLink = false;
+$dataMap = $document->dataMap();
+if (isset($dataMap['link'])){
+    $content = $dataMap['link']->content();
+    if ($content instanceof eZMatrix){
+        foreach ($content->attribute('rows')['sequential'] as $row){
+            if ($row['columns'][1] == '/j/download/' . $idDoc . '/' . $serial){
+                $isDocumentLink = true;
+                break;
+            }
+        }
+    }
+}
+
+if (!$isDocumentLink) {
+    return $module->handleError(eZError::KERNEL_ACCESS_DENIED, 'kernel');
+}
+
 $data = OpenPABolzanoImportJirideHandler::fetchAllegato($serial);
 $filename = $data->NomeAllegato;
 $file = eZClusterFileHandler::instance(eZSys::cacheDirectory() . '/tmp/' . $filename);
