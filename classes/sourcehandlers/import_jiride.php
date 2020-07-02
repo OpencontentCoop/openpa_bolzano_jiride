@@ -242,12 +242,14 @@ class OpenPABolzanoImportJirideHandler extends SQLIImportAbstractHandler impleme
             $stringArray[] = $documentTypeTag->attribute( 'parent_id' );
 
             $documentType = implode( '|#', $stringArray );
-            $documentTypeNames = $documentTypeTag->languageNameArray();
-            if (isset($documentTypeNames['ita-IT'])){
-                $documentTypeNameIta = $documentTypeNames['ita-IT'];
-            }
-            if (isset($documentTypeNames['ger-DE'])){
-                $documentTypeNameGer = $documentTypeNames['ger-DE'];
+            $translations = $documentTypeTag->getTranslations();
+            foreach ($translations as $translation){
+                if ($translation->attribute('locale') == 'ita-IT'){
+                    $documentTypeNameIta = $translation->attribute('keyword');
+                }
+                if ($translation->attribute('locale') == 'ger-DE'){
+                    $documentTypeNameGer = $translation->attribute('keyword');
+                }
             }
         }
         $topics = $this->getTopics($document);
