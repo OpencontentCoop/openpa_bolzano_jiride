@@ -2,11 +2,11 @@
 
 class OpenPABolzanoImportJirideHandler extends SQLIImportAbstractHandler implements ISQLIImportHandler
 {
-    const OFFICE_PARENT_NODE = 15889;
+    private static $OFFICE_PARENT_NODE = 15889;
 
-    const DOCUMENT_PARENT_NODE = 15896;
+    private static $DOCUMENT_PARENT_NODE = 16718;
 
-    const DEFAULT_TOPIC_OBJECT = 23200;
+    private static $DEFAULT_TOPIC_OBJECT = 23200;
 
     private static $enableDebug = false;
 
@@ -108,7 +108,7 @@ class OpenPABolzanoImportJirideHandler extends SQLIImportAbstractHandler impleme
         foreach ($contentData['fields'] as $key => $value) {
             $content->fields->{$key} = $value;
         }
-        $content->addLocation( SQLILocation::fromNodeID(self::DOCUMENT_PARENT_NODE));
+        $content->addLocation( SQLILocation::fromNodeID(self::$DOCUMENT_PARENT_NODE));
         $publisher = SQLIContentPublisher::getInstance();
         $publisher->publish($content);
         $node = $content->mainNode();
@@ -267,7 +267,7 @@ class OpenPABolzanoImportJirideHandler extends SQLIImportAbstractHandler impleme
                 'topics' => $this->getTopics($document),
                 'link' => $this->getLinks($document),
                 'area' => $this->getArea($document),
-                'has_organization' => $this->getOffice($document),
+                //'has_organization' => $this->getOffice($document),
                 'start_time' => $this->getTimetamp((string)$document->DataEsecutivita),
                 'publication_start_time' => $this->getTimetamp((string)$document->ListaTarget->Target->DataInizioPubblicazione),
                 'publication_end_time' => $this->getTimetamp((string)$document->ListaTarget->Target->DataFinePubblicazione),
@@ -290,7 +290,7 @@ class OpenPABolzanoImportJirideHandler extends SQLIImportAbstractHandler impleme
 
     private function getTopics(SimpleXMLElement $document)
     {
-        return self::DEFAULT_TOPIC_OBJECT;
+        return self::$DEFAULT_TOPIC_OBJECT;
     }
 
     private function getLinks(SimpleXMLElement $document)
@@ -333,7 +333,7 @@ class OpenPABolzanoImportJirideHandler extends SQLIImportAbstractHandler impleme
             $office = eZContentFunctions::createAndPublishObject(
                 array(
                     'class_identifier' => 'office',
-                    'parent_node_id' => self::OFFICE_PARENT_NODE,
+                    'parent_node_id' => self::$OFFICE_PARENT_NODE,
                     'remote_id' => 'office_' . $document->Proponente,
                     'attributes' => array(
                         'legal_name' => (string)$document->Proponente_Descrizione,
