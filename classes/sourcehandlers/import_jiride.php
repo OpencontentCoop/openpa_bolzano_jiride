@@ -257,10 +257,12 @@ class OpenPABolzanoImportJirideHandler extends SQLIImportAbstractHandler impleme
         $area = $this->getArea($document);
         $office = null; //$this->getOffice($document)
         $keywords = [
+            $document->TipoAtto_Descrizione,
             $document->ListaTarget->Target->Codice1,
             $document->ListaTarget->Target->Denominazione1,
             $document->ListaTarget->Target->Codice2,
             $document->ListaTarget->Target->Denominazione2,
+            $document->ListaTarget->Target->Codice1 . '_' . $document->ListaTarget->Target->Codice2,
         ];
 
         return [
