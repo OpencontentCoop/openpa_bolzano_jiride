@@ -81,7 +81,13 @@ class OpenPABolzanoImportJirideHandler extends SQLIImportAbstractHandler impleme
             $from = strpos($fromTimestamp, '/') === false ? date('d/m/Y', $fromTimestamp) : $fromTimestamp;
         }
 
-        $to = strpos($toTimestamp, '/') === false ? date('d/m/Y', $toTimestamp) : $toTimestamp;
+        if (strpos($toTimestamp, '/') !== false){
+            list($day, $month, $year) = explode('/', $toTimestamp);
+            $toTimestamp = mktime(0,0,0,$month, $day, $year);
+        }
+
+        // aggiungo un giorno al parametro AllaDataUpd per vedere le modifiche il giorno stesso
+        $to = $toTimestamp + 86400;
 
         $client = self::getSoapClient();
 
