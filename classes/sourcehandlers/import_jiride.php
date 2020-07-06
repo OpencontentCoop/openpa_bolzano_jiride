@@ -87,7 +87,7 @@ class OpenPABolzanoImportJirideHandler extends SQLIImportAbstractHandler impleme
         }
 
         // aggiungo un giorno al parametro AllaDataUpd per vedere le modifiche il giorno stesso
-        $to = $toTimestamp + 86400;
+        $to = date('d/m/Y', ($toTimestamp + 86400));
 
         $client = self::getSoapClient();
 
