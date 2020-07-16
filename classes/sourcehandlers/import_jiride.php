@@ -146,7 +146,7 @@ class OpenPABolzanoImportJirideHandler extends SQLIImportAbstractHandler impleme
     {
         $wsdlUrl = 'extension/openpa_bolzano_jiride/WSBachecaSoap.wsdl';
 
-        return new SoapClient($wsdlUrl);
+        return new SoapClient($wsdlUrl, array('cache_wsdl' => WSDL_CACHE_NONE));
     }
 
     private static function array_to_xml($data, SimpleXMLElement &$xml_data)
