@@ -31,7 +31,7 @@ try
 {
     $result = OpenPABolzanoImportJirideHandler::fetchData(
         mktime(0,0,0, 2, 6, 2020),
-        mktime(0,0,0, 3, 16, 2020)
+        mktime(0,0,0, 7, 16, 2020)
     );
 
     print_r($result); 

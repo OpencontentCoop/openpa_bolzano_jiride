@@ -233,6 +233,9 @@ class OpenPABolzanoImportJirideHandler extends SQLIImportAbstractHandler impleme
         } catch (Exception $e) {
             $this->cli->error($e->getMessage());
         }
+	if ($row->Stato != 'attivo'){
+	    eZContentObjectTreeNode::hideSubTree($node);
+	}
     }
 
     private function parseDocument(SimpleXMLElement $document)
