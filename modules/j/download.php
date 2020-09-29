@@ -37,6 +37,10 @@ if (!$isDocumentLink) {
 
 $data = OpenPABolzanoImportJirideHandler::fetchAllegato($serial);
 $filename = $data->NomeAllegato;
+if (empty($filename)){
+    $filename = $serial;
+}
+eZDir::mkdir(eZSys::cacheDirectory() . '/tmp', false, true);
 $file = eZClusterFileHandler::instance(eZSys::cacheDirectory() . '/tmp/' . $filename);
 $file->storeContents(base64_decode($data->Image));
 $filesize = $file->size();
