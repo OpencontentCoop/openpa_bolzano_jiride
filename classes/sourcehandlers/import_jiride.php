@@ -350,7 +350,8 @@ class OpenPABolzanoImportJirideHandler extends SQLIImportAbstractHandler impleme
     {
         $data = [];
         foreach ($document->Allegati->Allegato as $allegato) {
-            $data[] = $allegato->Commento . ' ' . $allegato->TipoAllegato . '|' . '/j/download/' . $document->IdDocumento . '/' . $allegato->Serial;
+//            $data[] = $allegato->Commento . ' ' . $allegato->TipoAllegato . '|' . '/j/download/' . $document->IdDocumento . '/' . $allegato->Serial;
+            $data[] = $allegato->Commento . '|' . '/j/download/' . $document->IdDocumento . '/' . $allegato->Serial;
         }
 
         return implode('&', $data);
