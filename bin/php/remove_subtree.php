@@ -34,7 +34,7 @@ $srcNodesID  = $scriptOptions[ 'nodes-id' ] ? trim( $scriptOptions[ 'nodes-id' ]
 $moveToTrash = $scriptOptions[ 'ignore-trash' ] ? false : true;
 $parentIDArray = $srcNodesID ? explode( ',', $srcNodesID ) : false;
 
-class NullSearchPlugin extends eZSolr
+class NullSearchPlugin
 {
     public function __call($name, $arguments)
     {
@@ -241,14 +241,17 @@ function removeSubtrees( $deleteIDArray, $moveToTrash = true, $infoOnly = false 
                 // removeNodeFromTree -> removeThis handles cache clearing
                 while ( 1 )
                 {
+                    eZCLI::instance()->output('.', false);
                     // We should remove the latest subitems first,
                     // so we should fetch subitems sorted by 'path_string' DESC
                     $children = $node->subTree( array( 'Limitation' => array(),
                         'SortBy' => array( 'path' , false ),
                         'Limit' => 100,
                         'IgnoreVisibility' => true ) );
-                    if ( !$children )
+                    if ( !$children ){
+                        eZCLI::instance()->output();
                         break;
+                    }
 
                     foreach ( $children as $child )
                     {
