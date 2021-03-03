@@ -24,17 +24,23 @@ $cli->warning(eZDB::instance()->DB);
 
 $count = eZDB::instance()->arrayQuery("SELECT count(*) FROM ezbinaryfile WHERE contentobject_attribute_id not in (select distinct id from ezcontentobject_attribute);");
 $cli->warning("Deleting " . $count[0]['count'] . ' rows from ezbinaryfile... ', false);
-$count = eZDB::instance()->arrayQuery("DELETE FROM ezbinaryfile WHERE contentobject_attribute_id not in (select distinct id from ezcontentobject_attribute);");
+if ($count[0]['count']) {
+    $count = eZDB::instance()->arrayQuery("DELETE FROM ezbinaryfile WHERE contentobject_attribute_id not in (select distinct id from ezcontentobject_attribute);");
+}
 $cli->warning('done!');
 
 $count = eZDB::instance()->arrayQuery("SELECT count(*) FROM ezimagefile WHERE contentobject_attribute_id not in (select distinct id from ezcontentobject_attribute);");
 $cli->warning("Deleting " . $count[0]['count'] . ' rows from ezimagefile... ', false);
-$count = eZDB::instance()->arrayQuery("DELETE FROM ezimagefile WHERE contentobject_attribute_id not in (select distinct id from ezcontentobject_attribute);");
+if ($count[0]['count']) {
+    $count = eZDB::instance()->arrayQuery("DELETE FROM ezimagefile WHERE contentobject_attribute_id not in (select distinct id from ezcontentobject_attribute);");
+}
 $cli->warning('done!');
 
 $count = eZDB::instance()->arrayQuery("SELECT count(*) FROM eznode_assignment WHERE parent_node not in (select distinct node_id from ezcontentobject_tree);");
 $cli->warning("Deleting " . $count[0]['count'] . ' rows from eznode_assignment... ', false);
-$count = eZDB::instance()->arrayQuery("DELETE FROM eznode_assignment WHERE parent_node not in (select distinct node_id from ezcontentobject_tree);");
+if ($count[0]['count']) {
+    $count = eZDB::instance()->arrayQuery("DELETE FROM eznode_assignment WHERE parent_node not in (select distinct node_id from ezcontentobject_tree);");
+}
 $cli->warning('done!');
 
 $missingMains = eZDB::instance()->arrayQuery("SELECT id FROM ezcontentobject WHERE id not in (select contentobject_id from eznode_assignment where is_main = 1);");

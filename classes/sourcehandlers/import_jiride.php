@@ -240,6 +240,8 @@ class OpenPABolzanoImportJirideHandler extends SQLIImportAbstractHandler impleme
 
     private function parseDocument(SimpleXMLElement $document)
     {
+        eZLog::write($document->asXML(), 'jiride.log');
+
         $documentTypeTag = $this->getDocumentTypeTag($document);
         $documentType = null;
         $documentTypeNameIta = 'Documento';
@@ -274,6 +276,18 @@ class OpenPABolzanoImportJirideHandler extends SQLIImportAbstractHandler impleme
             $document->ListaTarget->Target->Codice1 . '_' . $document->ListaTarget->Target->Codice2,
         ];
 
+        $numero = (string)$document->Numero;
+        $data = (string)$document->DataDocumento;
+
+        if (!empty($numero)){
+            $documentTypeNameIta .= ' n. ' . $document->Numero;
+            $documentTypeNameGer .= ' Nr. ' . $document->Numero;
+        }
+        if (!empty($data)){
+            $documentTypeNameIta .= ' del ' . $document->DataDocumento;
+            $documentTypeNameGer .= ' vom ' . str_replace('/', '.', $document->DataDocumento);
+        }
+
         return [
             'options' => [
                 'class_identifier' => 'document',
@@ -282,7 +296,7 @@ class OpenPABolzanoImportJirideHandler extends SQLIImportAbstractHandler impleme
             ],
             'fields' => [
                 'ita-IT' => [
-                    'name' => $documentTypeNameIta . ' n. ' . $document->Numero . ' del ' . $document->DataDocumento,
+                    'name' => $documentTypeNameIta,
                     'has_code' => $document->Numero . '/' . $document->Anno,
                     'document_type' => $documentType ? $documentType .'|#ita-IT' : null,
                     'description' => (string)$document->Oggetto,
@@ -299,7 +313,7 @@ class OpenPABolzanoImportJirideHandler extends SQLIImportAbstractHandler impleme
                     'keyword' => implode(',', $keywords),
                 ],
                 'ger-DE' => [
-                    'name' => $documentTypeNameGer . ' Nr. ' . $document->Numero . ' vom ' . str_replace('/', '.', $document->DataDocumento),
+                    'name' => $documentTypeNameGer,
                     'has_code' => $document->Numero . '/' . $document->Anno,
                     'document_type' => $documentType ? $documentType .'|#ger-DE' : null,
                     'description' => (string)$document->Oggetto2,
@@ -331,7 +345,7 @@ class OpenPABolzanoImportJirideHandler extends SQLIImportAbstractHandler impleme
                 return $tag->getMainTag();
             }
         }
-
+        $this->cli->error($document->TipoAtto);
         return null;
 
 //        if ($document->TipoAtto_Descrizione == 'DETERMINA') {
