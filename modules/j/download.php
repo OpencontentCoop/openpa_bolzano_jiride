@@ -19,8 +19,8 @@ if (!$document->canRead()) {
 
 $isDocumentLink = false;
 $dataMap = $document->dataMap();
-if (isset($dataMap['link'])){
-    $content = $dataMap['link']->content();
+if (isset($dataMap['links'])){
+    $content = $dataMap['links']->content();
     if ($content instanceof eZMatrix){
         foreach ($content->attribute('rows')['sequential'] as $row){
             if ($row['columns'][1] == '/j/download/' . $idDoc . '/' . $serial){
