@@ -1,0 +1,1189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://tempuri.org/" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://tempuri.org/" xmlns:intf="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="ListaDelibere">
+    <complexType>
+     <sequence>
+      <element name="BachecaFiltri" type="impl:BachecaFiltri"/>
+      <element name="CodiceAmministrazione" type="xsd:string"/>
+      <element name="CodiceAOO" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="BachecaFiltri">
+    <sequence>
+     <element maxOccurs="1" minOccurs="0" name="TipoAtto" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="TipoBacheca" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="TipoProvvedimento" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="Anno" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="Numero" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="Parola" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="DallaData" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="AllaData" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="Utente" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="Ruolo" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="MittenteInterno" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="RelatoreProposta" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="TipoDocumento" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="DallaDataFine" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="AllaDataFine" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="DallaDataDocumento" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="AllaDataDocumento" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="FullText" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="TipoRicercaFullText" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="IdDocumento" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="TipoRicercaParola" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="Dirigente" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="DallaDataEsecutivita" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="AllaDataEsecutivita" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="DaNumero" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="ANumero" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="NumeroRepertorio" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="SoloRepertorio" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="DallaDataAtto" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="AllaDataAtto" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="AnnoProtocollo" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="NumeroProtocollo" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="DaNumeroRegistro" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="ANumeroRegistro" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="DallaDataRegistro" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="AllaDataRegistro" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <element name="ListaDelibereResponse">
+    <complexType>
+     <sequence>
+      <element name="BachecaOut" type="impl:BachecaOut"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="AllegatoBachecaOut">
+    <sequence>
+     <element name="Serial" type="xsd:int"/>
+     <element maxOccurs="1" minOccurs="0" name="Estensione" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="SottoEstensione" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="Commento" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="Firme" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="ParereDi" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="TipoAllegato" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="NomeAllegato" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="ArrayOfAllegatoBachecaOut">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="impl:AllegatoBachecaOut"/>
+    </sequence>
+   </complexType>
+   <complexType name="RegistroAssegnatoOut">
+    <sequence>
+     <element maxOccurs="1" minOccurs="0" name="TipoRegistro" nillable="true" type="xsd:string"/>
+     <element name="AnnoRegistro" type="xsd:int"/>
+     <element name="NumeroRegistro" type="xsd:int"/>
+     <element maxOccurs="1" minOccurs="0" name="DataRegistro" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="ArrayOfRegistroAssegnatoOut">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="impl:RegistroAssegnatoOut"/>
+    </sequence>
+   </complexType>
+   <complexType name="DocumentoPraticaOut">
+    <sequence>
+     <element name="IdDocumento" type="xsd:int"/>
+     <element maxOccurs="1" minOccurs="0" name="StatoDocumento" nillable="true" type="xsd:string"/>
+     <element name="AnnoProtocollo" type="xsd:short"/>
+     <element name="NumeroProtocollo" type="xsd:int"/>
+     <element maxOccurs="1" minOccurs="0" name="TipoDocumento" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="Oggetto" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="ArrayOfDocumentoPraticaOut">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="impl:DocumentoPraticaOut"/>
+    </sequence>
+   </complexType>
+   <complexType name="ConvocazioneOut">
+    <sequence>
+     <element maxOccurs="1" minOccurs="0" name="DataSeduta" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="OraSeduta" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="SedeSeduta" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="TipoSeduta" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="EntePromotore" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="Origine" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="Mittente" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="Destinatario" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="StatoIter" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="Oggetto" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="DocumentiPratica" nillable="true" type="impl:ArrayOfDocumentoPraticaOut"/>
+    </sequence>
+   </complexType>
+   <complexType name="DocumentoBachecaOut">
+    <sequence>
+     <element name="IdDocumento" type="xsd:int"/>
+     <element maxOccurs="1" minOccurs="0" name="TipoAtto" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="TipoAtto_Descrizione" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="Proponente" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="Proponente_Descrizione" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="Oggetto" nillable="true" type="xsd:string"/>
+     <element name="Anno" type="xsd:short"/>
+     <element maxOccurs="1" minOccurs="0" name="Numero" nillable="true" type="xsd:string"/>
+     <element name="AnnoProtocollo" type="xsd:short"/>
+     <element name="NumeroProtocollo" type="xsd:int"/>
+     <element maxOccurs="1" minOccurs="0" name="DataDocumento" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="Classifica" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="Classifica_Descrizione" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="Dirigente" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="Dirigente_Descrizione" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="Assessore" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="Assessore_Descrizione" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="DataInizioPubblicazione" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="DataFinePubblicazione" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="DataEsecutivita" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="Mittente" nillable="true" type="xsd:string"/>
+     <element name="NumeroAllegati" type="xsd:int"/>
+     <element maxOccurs="1" minOccurs="0" name="Allegati" nillable="true" type="impl:ArrayOfAllegatoBachecaOut"/>
+     <element maxOccurs="1" minOccurs="0" name="Registri" nillable="true" type="impl:ArrayOfRegistroAssegnatoOut"/>
+     <element maxOccurs="1" minOccurs="0" name="Convocazione" nillable="true" type="impl:ConvocazioneOut"/>
+     <element maxOccurs="1" minOccurs="0" name="TipoDocumento" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="TipoDocumento_Descrizione" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="DataAtto" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="DataTrasmCollSindacale" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="ArrayOfDocumentoBachecaOut">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="impl:DocumentoBachecaOut"/>
+    </sequence>
+   </complexType>
+   <complexType name="BachecaOut">
+    <sequence>
+     <element maxOccurs="1" minOccurs="0" name="Titolo" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="Albo" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="Documenti" nillable="true" type="impl:ArrayOfDocumentoBachecaOut"/>
+     <element maxOccurs="1" minOccurs="0" name="Messaggio" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="Errore" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <element name="ListaDeterminazioni">
+    <complexType>
+     <sequence>
+      <element name="BachecaFiltri" type="impl:BachecaFiltri"/>
+      <element name="CodiceAmministrazione" type="xsd:string"/>
+      <element name="CodiceAOO" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="ListaDeterminazioniResponse">
+    <complexType>
+     <sequence>
+      <element name="BachecaOut" type="impl:BachecaOut"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="ListaAltriAtti">
+    <complexType>
+     <sequence>
+      <element name="BachecaFiltri" type="impl:BachecaFiltri"/>
+      <element name="CodiceAmministrazione" type="xsd:string"/>
+      <element name="CodiceAOO" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="ListaAltriAttiResponse">
+    <complexType>
+     <sequence>
+      <element name="BachecaOut" type="impl:BachecaOut"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="ListaConferenzaServizi">
+    <complexType>
+     <sequence>
+      <element name="BachecaFiltri" type="impl:BachecaFiltri"/>
+      <element name="CodiceAmministrazione" type="xsd:string"/>
+      <element name="CodiceAOO" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="ListaConferenzaServiziResponse">
+    <complexType>
+     <sequence>
+      <element name="BachecaOut" type="impl:BachecaOut"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="DownloadAllegato">
+    <complexType>
+     <sequence>
+      <element name="Serial" type="xsd:int"/>
+      <element name="CodiceAmministrazione" type="xsd:string"/>
+      <element name="CodiceAOO" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="DownloadAllegatoResponse">
+    <complexType>
+     <sequence>
+      <element name="DownloadAllegatoResult" type="impl:DownloadAllegatoOut"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="DownloadAllegatoOut">
+    <sequence>
+     <element name="Serial" type="xsd:int"/>
+     <element maxOccurs="1" minOccurs="0" name="URL" type="xsd:string"/>
+     <element name="Dimensione" type="xsd:long"/>
+     <element maxOccurs="1" minOccurs="0" name="Image" nillable="true" type="xsd:base64Binary"/>
+     <element maxOccurs="1" minOccurs="0" name="Messaggio" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="Errore" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="TipoAllegato" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="NomeAllegato" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="Estensione" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="SottoEstensione" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="Commento" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="Firmato" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="ParereDi" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="Pubblicato" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="CommentoBilingue" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <element name="DownloadAllegatoBin">
+    <complexType>
+     <sequence>
+      <element name="Serial" type="xsd:int"/>
+      <element name="CodiceAmministrazione" type="xsd:string"/>
+      <element name="CodiceAOO" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="DownloadAllegatoBinResponse">
+    <complexType>
+     <sequence>
+      <element name="DownloadAllegatoBinResult" type="impl:DownloadAllegatoOut"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="ListaTipiAtto">
+    <complexType>
+     <sequence>
+      <element name="TipoDocumento" type="xsd:string"/>
+      <element name="CodiceAmministrazione" type="xsd:string"/>
+      <element name="CodiceAOO" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="ListaTipiAttoResponse">
+    <complexType>
+     <sequence>
+      <element name="ListaTipiAttoResult" type="impl:TipiAttoOut"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="TipoAttoOut">
+    <sequence>
+     <element maxOccurs="1" minOccurs="0" name="TipoAtto" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="TipoAtto_Descrizione" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="ArrayOfTipoAttoOut">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="impl:TipoAttoOut"/>
+    </sequence>
+   </complexType>
+   <complexType name="TipiAttoOut">
+    <sequence>
+     <element maxOccurs="1" minOccurs="0" name="TipoDocumento" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="TipoDocumento_Descrizione" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="TipiAtto" nillable="true" type="impl:ArrayOfTipoAttoOut"/>
+     <element maxOccurs="1" minOccurs="0" name="Messaggio" nillable="true" type="xsd:string"/>
+     <element maxOccurs="1" minOccurs="0" name="Errore" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <element name="ConsultazioneAlboPretorio">
+    <complexType>
+     <sequence>
+      <element name="BachecaFiltri" type="impl:BachecaFiltri"/>
+      <element name="CodiceAmministrazione" type="xsd:string"/>
+      <element name="CodiceAOO" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="ConsultazioneAlboPretorioResponse">
+    <complexType>
+     <sequence>
+      <element name="BachecaOut" type="impl:BachecaOut"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="ConsultazioneAlboPretorioString">
+    <complexType>
+     <sequence>
+      <element name="BachecaFiltriStr" type="xsd:string"/>
+      <element name="CodiceAmministrazione" type="xsd:string"/>
+      <element name="CodiceAOO" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="ConsultazioneAlboPretorioStringResponse">
+    <complexType>
+     <sequence>
+      <element name="ConsultazioneAlboPretorioStringResult" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="DownloadAllegatoString">
+    <complexType>
+     <sequence>
+      <element name="TipoDownload" type="xsd:string"/>
+      <element name="Serial" type="xsd:int"/>
+      <element name="CodiceAmministrazione" type="xsd:string"/>
+      <element name="CodiceAOO" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="DownloadAllegatoStringResponse">
+    <complexType>
+     <sequence>
+      <element name="DownloadAllegatoStringResult" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="DownloadAllegatoPDF">
+    <complexType>
+     <sequence>
+      <element name="TipoDownload" type="xsd:string"/>
+      <element name="Serial" type="xsd:int"/>
+      <element name="CodiceAmministrazione" type="xsd:string"/>
+      <element name="CodiceAOO" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="DownloadAllegatoPDFResponse">
+    <complexType>
+     <sequence>
+      <element name="DownloadAllegatoPDFResult" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="ListaAltriAttiString">
+    <complexType>
+     <sequence>
+      <element name="BachecaFiltriStr" type="xsd:string"/>
+      <element name="CodiceAmministrazione" type="xsd:string"/>
+      <element name="CodiceAOO" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="ListaAltriAttiStringResponse">
+    <complexType>
+     <sequence>
+      <element name="ListaAltriAttiStringResult" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="ListaDelibereString">
+    <complexType>
+     <sequence>
+      <element name="BachecaFiltriStr" type="xsd:string"/>
+      <element name="CodiceAmministrazione" type="xsd:string"/>
+      <element name="CodiceAOO" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="ListaDelibereStringResponse">
+    <complexType>
+     <sequence>
+      <element name="ListaDelibereStringResult" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="ListaDeterminazioniString">
+    <complexType>
+     <sequence>
+      <element name="BachecaFiltriStr" type="xsd:string"/>
+      <element name="CodiceAmministrazione" type="xsd:string"/>
+      <element name="CodiceAOO" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="ListaDeterminazioniStringResponse">
+    <complexType>
+     <sequence>
+      <element name="ListaDeterminazioniStringResult" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="ConsultazioneAttiCollegioSindacale">
+    <complexType>
+     <sequence>
+      <element name="BachecaFiltriStr" type="xsd:string"/>
+      <element name="CodiceAmministrazione" type="xsd:string"/>
+      <element name="CodiceAOO" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="ConsultazioneAttiCollegioSindacaleResponse">
+    <complexType>
+     <sequence>
+      <element name="ConsultazioneAttiCollegioSindacaleResult" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="ConsultazioneAlboPretorio2String">
+    <complexType>
+     <sequence>
+      <element name="BachecaFiltriStr" type="xsd:string"/>
+      <element name="CodiceAmministrazione" type="xsd:string"/>
+      <element name="CodiceAOO" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="ConsultazioneAlboPretorio2StringResponse">
+    <complexType>
+     <sequence>
+      <element name="ConsultazioneAlboPretorio2StringResult" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="ListaAltriAtti2String">
+    <complexType>
+     <sequence>
+      <element name="BachecaFiltriStr" type="xsd:string"/>
+      <element name="CodiceAmministrazione" type="xsd:string"/>
+      <element name="CodiceAOO" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="ListaAltriAtti2StringResponse">
+    <complexType>
+     <sequence>
+      <element name="ListaAltriAtti2StringResult" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="ListaTrasparenza2String">
+    <complexType>
+     <sequence>
+      <element name="BachecaFiltriStr" type="xsd:string"/>
+      <element name="CodiceAmministrazione" type="xsd:string"/>
+      <element name="CodiceAOO" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="ListaTrasparenza2StringResponse">
+    <complexType>
+     <sequence>
+      <element name="ListaTrasparenza2StringResult" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="ListaDeterminazioniRequest">
+
+      <wsdl:part element="impl:ListaDeterminazioni" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="ListaAltriAttiRequest">
+
+      <wsdl:part element="impl:ListaAltriAtti" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="ListaConferenzaServiziRequest">
+
+      <wsdl:part element="impl:ListaConferenzaServizi" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="ConsultazioneAlboPretorio2StringResponse">
+
+      <wsdl:part element="impl:ConsultazioneAlboPretorio2StringResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="ConsultazioneAlboPretorioStringRequest">
+
+      <wsdl:part element="impl:ConsultazioneAlboPretorioString" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="ConsultazioneAttiCollegioSindacaleRequest">
+
+      <wsdl:part element="impl:ConsultazioneAttiCollegioSindacale" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="ListaConferenzaServiziResponse">
+
+      <wsdl:part element="impl:ListaConferenzaServiziResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="ListaDeterminazioniStringResponse">
+
+      <wsdl:part element="impl:ListaDeterminazioniStringResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="DownloadAllegatoBinRequest">
+
+      <wsdl:part element="impl:DownloadAllegatoBin" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="ListaDeterminazioniStringRequest">
+
+      <wsdl:part element="impl:ListaDeterminazioniString" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="DownloadAllegatoStringRequest">
+
+      <wsdl:part element="impl:DownloadAllegatoString" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="ListaTipiAttoRequest">
+
+      <wsdl:part element="impl:ListaTipiAtto" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="ListaTrasparenza2StringRequest">
+
+      <wsdl:part element="impl:ListaTrasparenza2String" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="ConsultazioneAlboPretorio2StringRequest">
+
+      <wsdl:part element="impl:ConsultazioneAlboPretorio2String" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="ListaTipiAttoResponse">
+
+      <wsdl:part element="impl:ListaTipiAttoResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="ListaDelibereResponse">
+
+      <wsdl:part element="impl:ListaDelibereResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="ListaAltriAttiStringResponse">
+
+      <wsdl:part element="impl:ListaAltriAttiStringResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="ListaAltriAtti2StringResponse">
+
+      <wsdl:part element="impl:ListaAltriAtti2StringResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="ListaAltriAttiResponse">
+
+      <wsdl:part element="impl:ListaAltriAttiResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="DownloadAllegatoResponse">
+
+      <wsdl:part element="impl:DownloadAllegatoResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="DownloadAllegatoPDFRequest">
+
+      <wsdl:part element="impl:DownloadAllegatoPDF" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="ListaDeterminazioniResponse">
+
+      <wsdl:part element="impl:ListaDeterminazioniResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="ConsultazioneAlboPretorioStringResponse">
+
+      <wsdl:part element="impl:ConsultazioneAlboPretorioStringResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="ListaAltriAttiStringRequest">
+
+      <wsdl:part element="impl:ListaAltriAttiString" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="ConsultazioneAlboPretorioResponse">
+
+      <wsdl:part element="impl:ConsultazioneAlboPretorioResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="ListaAltriAtti2StringRequest">
+
+      <wsdl:part element="impl:ListaAltriAtti2String" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="DownloadAllegatoRequest">
+
+      <wsdl:part element="impl:DownloadAllegato" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="ListaDelibereStringResponse">
+
+      <wsdl:part element="impl:ListaDelibereStringResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="ListaDelibereRequest">
+
+      <wsdl:part element="impl:ListaDelibere" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="DownloadAllegatoBinResponse">
+
+      <wsdl:part element="impl:DownloadAllegatoBinResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="DownloadAllegatoPDFResponse">
+
+      <wsdl:part element="impl:DownloadAllegatoPDFResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="ListaDelibereStringRequest">
+
+      <wsdl:part element="impl:ListaDelibereString" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="ConsultazioneAlboPretorioRequest">
+
+      <wsdl:part element="impl:ConsultazioneAlboPretorio" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="DownloadAllegatoStringResponse">
+
+      <wsdl:part element="impl:DownloadAllegatoStringResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="ListaTrasparenza2StringResponse">
+
+      <wsdl:part element="impl:ListaTrasparenza2StringResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="ConsultazioneAttiCollegioSindacaleResponse">
+
+      <wsdl:part element="impl:ConsultazioneAttiCollegioSindacaleResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:portType name="WSBachecaSoap">
+
+      <wsdl:operation name="ListaDelibere">
+
+         <wsdl:input message="impl:ListaDelibereRequest" name="ListaDelibereRequest"/>
+
+         <wsdl:output message="impl:ListaDelibereResponse" name="ListaDelibereResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="ListaDeterminazioni">
+
+         <wsdl:input message="impl:ListaDeterminazioniRequest" name="ListaDeterminazioniRequest"/>
+
+         <wsdl:output message="impl:ListaDeterminazioniResponse" name="ListaDeterminazioniResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="ListaAltriAtti">
+
+         <wsdl:input message="impl:ListaAltriAttiRequest" name="ListaAltriAttiRequest"/>
+
+         <wsdl:output message="impl:ListaAltriAttiResponse" name="ListaAltriAttiResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="ListaConferenzaServizi">
+
+         <wsdl:input message="impl:ListaConferenzaServiziRequest" name="ListaConferenzaServiziRequest"/>
+
+         <wsdl:output message="impl:ListaConferenzaServiziResponse" name="ListaConferenzaServiziResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="DownloadAllegato">
+
+         <wsdl:input message="impl:DownloadAllegatoRequest" name="DownloadAllegatoRequest"/>
+
+         <wsdl:output message="impl:DownloadAllegatoResponse" name="DownloadAllegatoResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="DownloadAllegatoBin">
+
+         <wsdl:input message="impl:DownloadAllegatoBinRequest" name="DownloadAllegatoBinRequest"/>
+
+         <wsdl:output message="impl:DownloadAllegatoBinResponse" name="DownloadAllegatoBinResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="ListaTipiAtto">
+
+         <wsdl:input message="impl:ListaTipiAttoRequest" name="ListaTipiAttoRequest"/>
+
+         <wsdl:output message="impl:ListaTipiAttoResponse" name="ListaTipiAttoResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="ConsultazioneAlboPretorio">
+
+         <wsdl:input message="impl:ConsultazioneAlboPretorioRequest" name="ConsultazioneAlboPretorioRequest"/>
+
+         <wsdl:output message="impl:ConsultazioneAlboPretorioResponse" name="ConsultazioneAlboPretorioResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="ConsultazioneAlboPretorioString">
+
+         <wsdl:input message="impl:ConsultazioneAlboPretorioStringRequest" name="ConsultazioneAlboPretorioStringRequest"/>
+
+         <wsdl:output message="impl:ConsultazioneAlboPretorioStringResponse" name="ConsultazioneAlboPretorioStringResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="DownloadAllegatoString">
+
+         <wsdl:input message="impl:DownloadAllegatoStringRequest" name="DownloadAllegatoStringRequest"/>
+
+         <wsdl:output message="impl:DownloadAllegatoStringResponse" name="DownloadAllegatoStringResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="DownloadAllegatoPDF">
+
+         <wsdl:input message="impl:DownloadAllegatoPDFRequest" name="DownloadAllegatoPDFRequest"/>
+
+         <wsdl:output message="impl:DownloadAllegatoPDFResponse" name="DownloadAllegatoPDFResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="ListaAltriAttiString">
+
+         <wsdl:input message="impl:ListaAltriAttiStringRequest" name="ListaAltriAttiStringRequest"/>
+
+         <wsdl:output message="impl:ListaAltriAttiStringResponse" name="ListaAltriAttiStringResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="ListaDelibereString">
+
+         <wsdl:input message="impl:ListaDelibereStringRequest" name="ListaDelibereStringRequest"/>
+
+         <wsdl:output message="impl:ListaDelibereStringResponse" name="ListaDelibereStringResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="ListaDeterminazioniString">
+
+         <wsdl:input message="impl:ListaDeterminazioniStringRequest" name="ListaDeterminazioniStringRequest"/>
+
+         <wsdl:output message="impl:ListaDeterminazioniStringResponse" name="ListaDeterminazioniStringResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="ConsultazioneAttiCollegioSindacale">
+
+         <wsdl:input message="impl:ConsultazioneAttiCollegioSindacaleRequest" name="ConsultazioneAttiCollegioSindacaleRequest"/>
+
+         <wsdl:output message="impl:ConsultazioneAttiCollegioSindacaleResponse" name="ConsultazioneAttiCollegioSindacaleResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="ConsultazioneAlboPretorio2String">
+
+         <wsdl:input message="impl:ConsultazioneAlboPretorio2StringRequest" name="ConsultazioneAlboPretorio2StringRequest"/>
+
+         <wsdl:output message="impl:ConsultazioneAlboPretorio2StringResponse" name="ConsultazioneAlboPretorio2StringResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="ListaAltriAtti2String">
+
+         <wsdl:input message="impl:ListaAltriAtti2StringRequest" name="ListaAltriAtti2StringRequest"/>
+
+         <wsdl:output message="impl:ListaAltriAtti2StringResponse" name="ListaAltriAtti2StringResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="ListaTrasparenza2String">
+
+         <wsdl:input message="impl:ListaTrasparenza2StringRequest" name="ListaTrasparenza2StringRequest"/>
+
+         <wsdl:output message="impl:ListaTrasparenza2StringResponse" name="ListaTrasparenza2StringResponse"/>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="WSBachecaSoapSoapBinding" type="impl:WSBachecaSoap">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="ListaDelibere">
+
+         <wsdlsoap:operation soapAction="http://tempuri.org/ListaDelibere"/>
+
+         <wsdl:input name="ListaDelibereRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="ListaDelibereResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="ListaDeterminazioni">
+
+         <wsdlsoap:operation soapAction="http://tempuri.org/ListaDeterminazioni"/>
+
+         <wsdl:input name="ListaDeterminazioniRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="ListaDeterminazioniResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="ListaAltriAtti">
+
+         <wsdlsoap:operation soapAction="http://tempuri.org/ListaAltriAtti"/>
+
+         <wsdl:input name="ListaAltriAttiRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="ListaAltriAttiResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="ListaConferenzaServizi">
+
+         <wsdlsoap:operation soapAction="http://tempuri.org/ListaConferenzaServizi"/>
+
+         <wsdl:input name="ListaConferenzaServiziRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="ListaConferenzaServiziResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="DownloadAllegato">
+
+         <wsdlsoap:operation soapAction="http://tempuri.org/DownloadAllegato"/>
+
+         <wsdl:input name="DownloadAllegatoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="DownloadAllegatoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="DownloadAllegatoBin">
+
+         <wsdlsoap:operation soapAction="http://tempuri.org/DownloadAllegatoBin"/>
+
+         <wsdl:input name="DownloadAllegatoBinRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="DownloadAllegatoBinResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="ListaTipiAtto">
+
+         <wsdlsoap:operation soapAction="http://tempuri.org/ListaTipiAtto"/>
+
+         <wsdl:input name="ListaTipiAttoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="ListaTipiAttoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="ConsultazioneAlboPretorio">
+
+         <wsdlsoap:operation soapAction="http://tempuri.org/ConsultazioneAlboPretorio"/>
+
+         <wsdl:input name="ConsultazioneAlboPretorioRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="ConsultazioneAlboPretorioResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="ConsultazioneAlboPretorioString">
+
+         <wsdlsoap:operation soapAction="http://tempuri.org/ConsultazioneAlboPretorioString"/>
+
+         <wsdl:input name="ConsultazioneAlboPretorioStringRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="ConsultazioneAlboPretorioStringResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="DownloadAllegatoString">
+
+         <wsdlsoap:operation soapAction="http://tempuri.org/DownloadAllegatoString"/>
+
+         <wsdl:input name="DownloadAllegatoStringRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="DownloadAllegatoStringResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="DownloadAllegatoPDF">
+
+         <wsdlsoap:operation soapAction="http://tempuri.org/DownloadAllegatoPDF"/>
+
+         <wsdl:input name="DownloadAllegatoPDFRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="DownloadAllegatoPDFResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="ListaAltriAttiString">
+
+         <wsdlsoap:operation soapAction="http://tempuri.org/ListaAltriAttiString"/>
+
+         <wsdl:input name="ListaAltriAttiStringRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="ListaAltriAttiStringResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="ListaDelibereString">
+
+         <wsdlsoap:operation soapAction="http://tempuri.org/ListaDelibereString"/>
+
+         <wsdl:input name="ListaDelibereStringRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="ListaDelibereStringResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="ListaDeterminazioniString">
+
+         <wsdlsoap:operation soapAction="http://tempuri.org/ListaDeterminazioniString"/>
+
+         <wsdl:input name="ListaDeterminazioniStringRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="ListaDeterminazioniStringResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="ConsultazioneAttiCollegioSindacale">
+
+         <wsdlsoap:operation soapAction="http://tempuri.org/ConsultazioneAttiCollegioSindacale"/>
+
+         <wsdl:input name="ConsultazioneAttiCollegioSindacaleRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="ConsultazioneAttiCollegioSindacaleResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="ConsultazioneAlboPretorio2String">
+
+         <wsdlsoap:operation soapAction="http://tempuri.org/ConsultazioneAlboPretorio2String"/>
+
+         <wsdl:input name="ConsultazioneAlboPretorio2StringRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="ConsultazioneAlboPretorio2StringResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="ListaAltriAtti2String">
+
+         <wsdlsoap:operation soapAction="http://tempuri.org/ListaAltriAtti2String"/>
+
+         <wsdl:input name="ListaAltriAtti2StringRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="ListaAltriAtti2StringResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="ListaTrasparenza2String">
+
+         <wsdlsoap:operation soapAction="http://tempuri.org/ListaTrasparenza2String"/>
+
+         <wsdl:input name="ListaTrasparenza2StringRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="ListaTrasparenza2StringResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="WSBacheca">
+
+      <wsdl:port binding="impl:WSBachecaSoapSoapBinding" name="WSBachecaSoap">
+
+         <wsdlsoap:address location="https://oc.comune.bolzano.it/client/services/WSBachecaSoap"/>
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

@@ -144,9 +144,30 @@ class OpenPABolzanoImportJirideHandler extends SQLIImportAbstractHandler impleme
 
     private static function getSoapClient()
     {
-        $wsdlUrl = 'extension/openpa_bolzano_jiride/WSBachecaSoap.wsdl';
+        $certFile = getenv('JIRIDE_BOLZANO_CERT');
+        if ($certFile){
+            $wsdlUrl = 'extension/openpa_bolzano_jiride/WSBachecaSoap-saas.wsdl';
 
-        return new SoapClient($wsdlUrl, array('cache_wsdl' => WSDL_CACHE_NONE));
+            $context = stream_context_create();
+            stream_context_set_option($context, 'ssl', 'capture_peer_cert', true);
+            stream_context_set_option($context, 'ssl', 'local_cert', $certFile);
+            stream_context_set_option($context, 'ssl', 'ciphers', 'SSLv3');
+            stream_context_set_option($context, 'ssl', 'verify_peer', false);
+            stream_context_set_option($context, 'ssl', 'verify_peer_name', false);
+            stream_context_set_option($context, 'ssl', 'allow_self_signed', true);
+
+            return new SoapClient($wsdlUrl, [
+                'local_cert' => $certFile,
+                'cache_wsdl' => WSDL_CACHE_NONE,
+                'exceptions' => true,
+                'stream_context' => $context
+            ]);
+        }else{
+            $wsdlUrl = 'extension/openpa_bolzano_jiride/WSBachecaSoap.wsdl';
+            return new SoapClient($wsdlUrl, [
+                'cache_wsdl' => WSDL_CACHE_NONE,
+            ]);
+        }
     }
 
     private static function array_to_xml($data, SimpleXMLElement &$xml_data)
