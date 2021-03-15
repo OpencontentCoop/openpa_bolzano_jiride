@@ -36,9 +36,9 @@ if (!$isDocumentLink) {
 }
 
 $data = OpenPABolzanoImportJirideHandler::fetchAllegato($serial);
-$filename = $data->NomeAllegato;
+$filename = (string)$data->NomeAllegato;
 if (empty($filename)){
-    $filename = $serial;
+    $filename = $serial . '.pdf';
 }
 eZDir::mkdir(eZSys::cacheDirectory() . '/tmp', false, true);
 $file = eZClusterFileHandler::instance(eZSys::cacheDirectory() . '/tmp/' . $filename);
