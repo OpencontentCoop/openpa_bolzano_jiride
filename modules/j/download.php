@@ -19,11 +19,11 @@ if (!$document->canRead()) {
 
 $isDocumentLink = false;
 $dataMap = $document->dataMap();
-if (isset($dataMap['links'])){
+if (isset($dataMap['links'])) {
     $content = $dataMap['links']->content();
-    if ($content instanceof eZMatrix){
-        foreach ($content->attribute('rows')['sequential'] as $row){
-            if ($row['columns'][1] == '/j/download/' . $idDoc . '/' . $serial){
+    if ($content instanceof eZMatrix) {
+        foreach ($content->attribute('rows')['sequential'] as $row) {
+            if ($row['columns'][1] == '/j/download/' . $idDoc . '/' . $serial) {
                 $isDocumentLink = true;
                 break;
             }
@@ -37,7 +37,7 @@ if (!$isDocumentLink) {
 
 $data = OpenPABolzanoImportJirideHandler::fetchAllegato($serial);
 $filename = (string)$data->NomeAllegato;
-if (empty($filename)){
+if (empty($filename)) {
     $filename = $serial . '.pdf';
 }
 eZDir::mkdir(eZSys::cacheDirectory() . '/tmp', false, true);
@@ -45,14 +45,19 @@ $file = eZClusterFileHandler::instance(eZSys::cacheDirectory() . '/tmp/' . $file
 $file->storeContents(base64_decode($data->Image));
 $filesize = $file->size();
 $mtime = $file->mtime();
-$datatype = $file->dataType();
-
-header( "Content-Type: {$datatype}" );
-header( "Connection: close" );
-header( 'Served-by: ' . $_SERVER["SERVER_NAME"] );
-header( "Last-Modified: " . gmdate( 'D, d M Y H:i:s', $mtime ) . ' GMT' );
-header( "ETag: $mtime-$filesize" );
-header( "Cache-Control: max-age=2592000 s-max-age=2592000" );
+$mimeinfo = eZMimeType::findByURL($file);
+header("Content-Type: {$mimeinfo['name']}");
+header("Connection: close");
+header('Served-by: ' . $_SERVER["SERVER_NAME"]);
+header("Last-Modified: " . gmdate('D, d M Y H:i:s', $mtime) . ' GMT');
+header("ETag: $mtime-$filesize");
+header("Cache-Control: max-age=2592000 s-max-age=2592000");
+$isAttachedDownload = false;
+header(
+    "Content-Disposition: " .
+    ($isAttachedDownload ? 'attachment' : 'inline') .
+    "; filename={$filename}"
+);
 
 $file->passthrough();
 
